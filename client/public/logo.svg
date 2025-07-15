@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"></stop>
+      <stop offset="100%" stop-color="#ff00d4"></stop>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00f0ff"></feDropShadow>
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ff00d4"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- Stylized X -->
+  <path d="M 30 40 L 80 100 L 30 160 L 50 180 L 100 120 L 150 180 L 170 160 L 120 100 L 170 40 L 150 20 L 100 80 L 50 20 Z" fill="url(#neon)" filter="url(#glow)"></path>
+
+</svg>
