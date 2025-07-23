@@ -8,7 +8,7 @@ import "../../styles.css";
 const NeanderthalsStart = () => {
   return (
     <Box>
-      <Stack className="flex h-screen w-screen items-center bg-gradient-to-b from-blue-500 to-white-500 p-4">
+      <Stack className="flex h-screen w-screen items-center bg-gradient-to-b from-blue-500 to-red-500 p-4">
         <Box className="w-full flex justify-start">
           <HomeButton/>
         </Box>
@@ -20,6 +20,7 @@ const NeanderthalsStart = () => {
         </Box>
         <Box className="mt-[12vh] flex flex-col items-center gap-4">
           <CreateButton/>
+          
           <JoinButton/>
         </Box>
       </Stack>

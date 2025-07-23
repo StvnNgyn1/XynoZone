@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 // Screens
 import Home from './screens/Home/Home'
 import Neanderthals from './screens/Neanderthals/NeanderthalsStart'
+import OddOneOut from './screens/OddOneOut/OddOneOutStart'
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/neanderthals" element={<Neanderthals/>}/>
+          <Route path="/oddoneout" element={<OddOneOut/>}/>
+          {/* Add more routes as needed */}
         </Routes>
       </BrowserRouter>
     </>
