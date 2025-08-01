@@ -4,7 +4,7 @@
   "compilerOptions": {
     /* Base Options: */
     "esModuleInterop": true,
-    "rootDir": "src",
+    "rootDir": ".",
     "skipLibCheck": true,
     "target": "es2020",
     "allowJs": true,
