@@ -19,7 +19,8 @@ const HomePage = () => {
           <Box> Select a game to continue! </Box>
         </Box>
         <Box className="mt-[12vh] flex items-center gap-4">
-          <NeanderthalsButton/>
+          {/* Under development */}
+          {/* <NeanderthalsButton/> */}
 
           <OddOneOutButton/>
         </Box>
