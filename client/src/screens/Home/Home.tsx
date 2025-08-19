@@ -1,3 +1,4 @@
+// client/src/screens/Home/Home.tsx
 import { Box, Stack } from "@mui/material";
 import HomeButton from "../../components/HomeButton";
 import NeanderthalsButton from "../../components/NeanderthalsButton";

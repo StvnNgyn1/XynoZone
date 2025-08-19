@@ -1,24 +1,31 @@
-import express from "express";
-import cors from "cors";
+// server/utils/server.ts
+import { createServer } from "http"; // Import createServer from http
+import { WebSocketServer } from "ws"; // Import WebSocketServer from ws
+import app from "../app.js"; // Import the Express app
 
-import lobbyRouter from "../controllers/lobby.js";
-import oddOneOutRouter from "../controllers/oddOneOut.js";
+const createHttpServer = () => {
+  // Create HTTP server
+  const server = createServer(app);
 
-const createServer = () => {
-  const app = express();
+  // Create WebSocket server and attach it to the HTTP server
+  const wss = new WebSocketServer({ server });
 
-  app.use(express.json());
+  // WebSocket connection handling
+  wss.on("connection", (ws) => {
+    console.log("New WebSocket connection established");
 
-  app.use(cors());
+    ws.on("message", (message) => {
+      console.log("Received message:", message.toString());
+      // Echo the message back to the client
+      ws.send(`Server received: ${message}`);
+    });
 
-  app.use("/api/lobby", lobbyRouter);
-  app.use("/api/oddoneout", oddOneOutRouter);
-
-  app.get("/", (req, res) => {
-    res.send("Hello from backend!");
+    ws.on("close", () => {
+      console.log("WebSocket connection closed");
+    });
   });
 
-  return app;
+  return server;
 };
 
-export default createServer;
+export default createHttpServer;

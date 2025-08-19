@@ -1,34 +1,19 @@
-import dotenv from "dotenv"
+// server/index.ts
+import dotenv from "dotenv";
 dotenv.config();
 
-import pkg from "pg";
-const { Pool } = pkg;
+import createHttpServer from "./utils/server.js"; // Import the function to create the HTTP server
+import pool from "./utils/db.js"; // Import the pool from utils/db.js
 
-import cors from "cors";
-import createServer from "./utils/server.js";
+const port = process.env.PORT || 3001; // Use environment variable or default to 3001
+const server = createHttpServer(); // Create the HTTP server
 
-const app = createServer();
-
-app.use(cors());
-const port = process.env.PORT || 3001;
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
-
-export default pool;
-
-const startServer = async () => {
+server.listen(port, async () => {
   try {
-    await pool.connect();
-    console.log("Connected to the database successfully");
-
-    app.listen(port, () => {
-      console.log(`Server listening on http://localhost:${port}`);
-    });
-  } catch (error) {
-    console.error("Unable to connect to database:", error);
+    await pool.query("SELECT 1"); // Test the database connection
+    console.log("✅ Database connection successful in index.ts");
+    console.log(`🚀 Server is running on http://localhost:${port}`);
+  } catch (err) {
+    console.error("❌ Database connection error in index.ts:", err);
   }
-};
-
-startServer();
+});
