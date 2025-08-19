@@ -1,3 +1,4 @@
+// client/src/components/OddOneOutButton.tsx
 import { useNavigate } from "react-router-dom";
 
 const OddOneOutButton = () => {

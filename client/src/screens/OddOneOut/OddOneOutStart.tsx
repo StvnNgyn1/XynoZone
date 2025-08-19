@@ -1,4 +1,5 @@
 import { Box, Stack } from "@mui/material";
+import TextInputBox from "../../components/TextInputBox";
 import CreateButton from "../../components/CreateButton";
 import JoinButton from "../../components/JoinButton";
 import HomeButton from "../../components/HomeButton";
@@ -19,6 +20,7 @@ const OddOneOutStart = () => {
           <Box> Welcome to Odd One Out! </Box>
         </Box>
         <Box className="mt-[12vh] flex flex-col items-center gap-4">
+          <TextInputBox placeholder="Nickname"/>
           <CreateButton/>
           <JoinButton/>
         </Box>

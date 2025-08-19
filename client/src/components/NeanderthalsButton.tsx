@@ -1,3 +1,4 @@
+// client/src/components/NeanderthalsButton.tsx
 import { useNavigate } from "react-router-dom";
 
 const NeanderthalsButton = () => {

@@ -1,3 +1,4 @@
+// client/src/components/HomeButton.tsx
 import { useNavigate } from "react-router-dom";
 
 const HomeButton = () => {
